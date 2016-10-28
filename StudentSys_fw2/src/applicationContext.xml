@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd" xmlns:tx="http://www.springframework.org/schema/tx">
+
+
+    <bean id="dataSource"
+		class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
+		<property name="url" value="jdbc:mysql://localhost:3306/login"></property>
+		<property name="username" value="root"></property>
+		<property name="password" value="wuwenjie"></property>
+	</bean>
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.MySQLDialect
+				</prop>
+				<prop key="hibernate.show_sql">true</prop>  
+                <prop key="hibernate.format_sql">true</prop> 
+			</props>
+		</property>
+		<property name="annotatedClasses">
+			<list>
+				<value>com.jzfactr.jd.bean.Black</value>
+				<value>com.jzfactr.jd.bean.Clasz</value>
+				<value>com.jzfactr.jd.bean.Student</value>
+				<value>com.jzfactr.jd.bean.User</value>
+			</list>
+		</property>
+		
+		<!-- <property name="configLocation"
+			value="classpath:hibernate.cfg.xml">
+		</property> -->
+	</bean>
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<tx:annotation-driven transaction-manager="transactionManager" />
+	<bean id="BlackDAO"
+		class="com.jzfactr.jd.dao.BlackDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="BlackService"
+		class="com.jzfactr.jd.service.BlackServiceImpl">
+		<property name="btDao"> 
+			<ref bean="BlackDAO" />
+		</property>
+	</bean>
+	<bean id="BlackAction"
+		class="com.jzfactr.jd.action.BlackAction" scope="prototype">
+		<property name="service"> 
+			<ref bean="BlackService" />
+		</property>
+	</bean>
+	<bean id="BlackOptAction"
+		class="com.jzfactr.jd.action.BlackOptAction" scope="prototype">
+		<property name="service"> 
+			<ref bean="BlackService" />
+		</property>
+	</bean>
+	
+	<bean id="ClaszDAO"
+		class="com.jzfactr.jd.dao.ClaszDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="ClaszService"
+		class="com.jzfactr.jd.service.ClaszServiceImpl">
+		<property name="clsDao"> 
+			<ref bean="ClaszDAO" />
+		</property>
+	</bean>
+	<bean id="ClsOptAction"
+		class="com.jzfactr.jd.action.ClsOptAction" scope="prototype">
+		<property name="service"> 
+			<ref bean="ClaszService" />
+		</property>
+	</bean>
+	
+	
+	<bean id="StudentDAO"
+		class="com.jzfactr.jd.dao.StudentDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="StudentService"
+		class="com.jzfactr.jd.service.StudentServiceImpl">
+		<property name="sDao"> 
+			<ref bean="StudentDAO" />
+		</property>
+		<property name="clsDao"> 
+			<ref bean="ClaszDAO" />
+		</property>
+	</bean>
+	<bean id="StudOptAction"
+		class="com.jzfactr.jd.action.StudOptAction" scope="prototype">
+		<property name="service">
+			<ref bean="StudentService" />
+		</property>
+	</bean>
+	
+	<bean id="UserDAO"
+		class="com.jzfactr.jd.dao.UserDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="UserServers"
+		class="com.jzfactr.jd.service.UserServiceImpl">
+		<property name="userDao"> 
+			<ref bean="UserDAO" />
+		</property>
+	</bean>
+	
+	<bean id="LoginServers"
+		class="com.jzfactr.jd.service.LoginServiceImpl">
+		<property name="userDao"> 
+			<ref bean="UserDAO" />
+		</property>
+	</bean>
+	
+	<bean id="LoginAction"
+		class="com.jzfactr.jd.action.LoginAction" scope="prototype">
+		<property name="service"> 
+			<ref bean="LoginServers" />
+		</property>
+	</bean>
+	
+	<bean id="MainActivion"
+		class="com.jzfactr.jd.action.MainActivion" scope="prototype">
+		<property name="service"> 
+			<ref bean="StudentService" />
+		</property>
+	</bean>
+	
+	<bean id="RegisterAction"
+		class="com.jzfactr.jd.action.RegisterAction" scope="prototype">
+		<property name="service"> 
+			<ref bean="LoginServers" />
+		</property>
+	</bean>
+	<bean id="BlackInterceptor" class="com.jzfactr.jd.intercepter.BlackIntercepter">
+	    <property name="service">
+	        <ref bean="BlackService"/>
+	    </property>
+	</bean>
+</beans>

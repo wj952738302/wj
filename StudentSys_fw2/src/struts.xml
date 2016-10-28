@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+  <constant name="struts.objectFactory" value="spring"/>
+  
+<package name="login" namespace="/login" extends="struts-default">
+		<action name="registerAction" class="RegisterAction">
+			<result name="input">/index.jsp?reg_res=2</result>
+			<result>/index.jsp?reg_res=${reg_res}</result>
+		</action>
+		<action name="loginAction" class="LoginAction">
+			<result name="log0" type="redirectAction" >
+			    <param name="actionName">mainActivion</param>
+			    <param name="namespace">/main</param>
+			</result>
+			<result name="input">/index.jsp?log_res=${log_res}</result>
+		    <result name="log2" type="redirectAction">
+                 <param name="actionName">blackAction</param>
+			     <param name="namespace">/main</param>
+            </result>
+		</action>
+	</package>
+	<package name="main" namespace="/main" extends="struts-default">
+	<!-- 定义一个拦截器 -->  
+        <interceptors>  
+            <interceptor name="loginInterceptor"  
+                class="com.jzfactr.jd.intercepter.LoginIntercepter">  
+            </interceptor> 
+              
+            <interceptor name="autoInterceptor"  
+                class="com.jzfactr.jd.intercepter.AutoInterceper">  
+            </interceptor> 
+            
+            <interceptor name="blackIntercepter"  
+                class="BlackInterceptor">  
+            </interceptor>  
+            
+            <!-- 拦截器栈 -->  
+            <interceptor-stack name="mydefault">  
+                <interceptor-ref name="defaultStack" />  
+                <interceptor-ref name="autoInterceptor" />
+                <interceptor-ref name="loginInterceptor" />  
+                <interceptor-ref name="blackIntercepter"/>
+            </interceptor-stack>  
+        </interceptors>  
+         <!--全局拦截器  -->
+        <default-interceptor-ref name="mydefault"/>
+        
+         <!-- 定义全局Result -->  
+        <global-results>  
+            <!-- 当返回login视图名时，转入/login.jsp页面 -->  
+            <result name="login">/index.jsp</result>  
+            <result name="mainActivion" type="redirectAction" >
+             <param name="actionName">mainActivion</param>
+             </result>
+             <result name="error">/black_error.jsp</result>
+              <result name="return">/index.jsp</result>
+        </global-results>  
+        
+	<action name="mainActivion" class="MainActivion">
+	<result>/main.jsp</result>
+	
+	 <!-- 使用此拦截器   
+            <interceptor-ref name="mydefault" />  
+            -->
+	</action>
+	<action name="studAdd" class="StudOptAction" method="add">
+	  <result type="redirectAction">mainActivion?clsId=${claszId}</result>
+	</action>
+	<action name="studDel" class="StudOptAction" method="del">
+	  <result type="redirectAction">mainActivion</result> 
+	</action>
+	<action name="studEdit" class="StudOptAction" method="edit">
+	  <result type="redirectAction">mainActivion?clsId=${claszId}</result>
+	</action>
+	<action name="clsAdd" class="ClsOptAction" method="add">
+	  <result type="redirectAction">mainActivion?clsId=${clasz.id}</result>
+	</action>
+	<action name="clsDel" class="ClsOptAction" method="del">
+	  <result type="redirectAction">mainActivion</result>
+	</action>
+	<action name="clsEdit" class="ClsOptAction" method="edit">
+	  <result type="redirectAction">mainActivion?clsId=${clasz.id}</result>
+	</action>
+	<action name="blackAction" class="BlackAction">
+	<result>/black.jsp</result>
+	</action>
+	<action name="blackOptAction" class="BlackOptAction">
+	<result type="redirectAction" name="back">blackAction?opt=${opt}</result>
+	</action>
+	<action name="uploadFile" class="BlackAction" method="uploadImage">
+	  <result type="redirectAction">blackAction</result>
+	  </action>
+	  <action name="returnAction" class="com.jzfactr.jd.action.ReturnAction">
+	<result type="redirectAction" name="back">returnAction</result>
+	</action>
+	</package>
+</struts>    
+                
