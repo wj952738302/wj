@@ -20,13 +20,13 @@
 			<ul class="nav navbar-nav navbar-left ">
 				<li><a href="/jmApp/jm/MainAction.action"
 					style="font-size: 18px">首页</a></li>
-				<li><a href="/jmApp/jm/MainAction.action" style="font-size: 18px">影视投资</a></li>
-				<li><a href="/jmApp/projectdelivery.html"
+				<li><a href="/jmApp/jm/ProjectAction.action" style="font-size: 18px">影视投资</a></li>
+				<li><a href="/jmApp/projectdelivery.jsp"
 					style="font-size: 18px">项目投递</a></li>
 				<!-- <li><a href="projectissue.html" style="font-size: 18px">发行</a></li> -->
-				<li><a href="/jmApp/shangcheng.html" style="font-size: 18px">玖马商城</a></li>
-				<li><a href="/jmApp/travel.html" style="font-size: 18px">影视旅游</a></li>
-				<li><a href="/jmApp/list.html" style="font-size: 18px">关于</a></li>
+				<li><a href="/jmApp/shangcheng.jsp" style="font-size: 18px">玖马商城</a></li>
+				<li><a href="/jmApp/travel.jsp" style="font-size: 18px">影视旅游</a></li>
+				<li><a href="/jmApp/list.jsp" style="font-size: 18px">关于</a></li>
 			</ul>
 
 			<ul class="nav navbar-nav navbar-right ">
