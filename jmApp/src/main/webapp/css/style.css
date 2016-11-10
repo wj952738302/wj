@@ -1,0 +1,193 @@
+.border-left {
+  width: 4px;
+  height: 14px;
+  background-color: #75c2e3;
+  display: inline-block;
+  margin-right: 4px; }
+
+
+.course-list-img{
+	/*width: 500px;
+	height:300px;*/
+	overflow:hidden;	
+	float:left;
+	/*margin:10px;*/
+}
+.course-list-img img{
+	display:block;
+	-webkit-transition:1s;
+	transition:1s;	
+}
+.course-list-img .img_1:hover{
+	 -webkit-transform:scale(0.8,1.2);
+	 -moz-transition:scale(0.8,1.2);
+}
+.course-list-img .img_2:hover{
+	 -webkit-transform:scale(0.5);
+	 -moz-transform:scale(0.5);
+}
+.course-list-img .img_3:hover{
+	 -webkit-transform:scale(-1.2,1.2);
+	 -moz-transform:scale(-1.2,1.2);
+}
+.course-list-img .img_4:hover{
+	 -webkit-transform:scale(1.2);
+	 -moz-transform:scale(1.2);
+}
+
+.investDetailBadge{padding:20px;font-size:20px;color:#FFF;}
+.investDetailBadge span{position:relative;background:#FF502D;padding:2px 30px 2px 5px;}
+.investDetailBadge span:after{content:"";position:absolute;top:0;right:0;width:0;height:0;border-top:15px solid transparent;border-right:15px solid #FFF;border-bottom:15px solid transparent;border-left:15px solid transparent;}
+
+.investDetailInfo{overflow:hidden;background:#FAFAFA;border-bottom:1px solid #eee;padding:20px 0;}
+.investDetailInfo ul{overflow:hidden;}
+.investDetailInfo ul li{float:left;width:46%;margin-left:4%;padding:5px 0;font-size:14px;}	
+.investDetailInfo ul li em{color:#999;}
+.investDetailInfo ul li span{color:#FF7300;}
+.investDetailInfo .description{margin-left:4%;font-size:12px;color:#a9a9a9;}
+
+.investDetailPrice{background:#FAFAFA; padding:20px;}
+.investDetailPrice h3{font-size:20px;font-weight:normal;color:#666;}
+.investDetailPrice p{font-size:36px;color:#FF7300;line-height:60px;}
+
+.investDetailSupport{overflow:hidden;margin:0 20px; padding:20px;border-top:1px dotted #ccc;}
+.investDetailSupport ul{}
+.investDetailSupport ul li{float:left;width:50%;color:#999;font-size:12px;}
+.investDetailSupport ul li span{color:#FF7300;}
+.investDetailSupport ul li img{vertical-align:top;}
+
+div.detail-img{
+	width: 624px!important;
+	height: 468px;
+}
+div.detail-img img{
+	width: 624px;
+	height: 468px;
+}
+
+/*invertdetail_main start*/
+div.invertdetail_main{
+	margin-top: 20px;
+	overflow: hidden;
+}
+div.main-left{
+	width: 750px;
+	border: 1px solid #dedede;
+	float: left;
+	margin-bottom: 20px;
+}
+div.main-right{
+	width: 261px;
+	border: 0px solid #dedede;
+	float: right;
+}
+.line-blue{
+	height: 2px;
+	width: 87%;
+	background:url(../img/blue.png);
+	margin: 0 auto;
+	margin-top: 10px;
+}
+
+
+.list-my-bank{margin-top: 20px;overflow: hidden;}
+.list-my-bank li{float: left;width: 198px;height: 138px;overflow: hidden;background: #ECECEC;border: 1px solid #ccc;border-radius: 3px;}
+.list-my-bank li .bank-bg{width: 278px;height: 78px; padding-top: 50px;background: url(../bg/bank-bg.png) no-repeat;}
+.list-my-bank li:nth-child(4n+4){margin-right: 0;}
+.list-my-bank li .bg-bank{height: 36px;background: #fff;border-bottom: 1px solid #ccc;}
+.list-my-bank li span{display: block;font: 12px/30px 'Verdana','Microsoft YaHei';text-indent: 10px;}
+.list-my-bank li span b{margin-left: 10px;font-weight: normal;color: #009FEC;}
+.list-my-bank li.add{cursor: pointer;}
+.list-my-bank li.add:hover{background: rgba(120, 201, 255, 0.5);border-color: #10B9FF;-PIE-background: rgba(120, 201, 255, 0.5);behavior:url(../plugin/PIE.htc);}
+.list-my-bank li.add b{display: block;margin-top: 40px;font: bold 80px/50px 'Helvetica';color: #bbb;text-align: center;}
+.list-my-bank li.add span{display: block;text-align: center;}
+
+.wp-form-add-bank{position: relative;display: none;padding: 15px;border: 1px solid #b3b3b3;}
+.wp-form-add-bank .cancel{position: absolute;right: 15px;top: 15px;width: 78px;height: 28px;font: 12px/28px 'Microsoft YaHei';background: #fff url(../../bg/icon-cancel.png) no-repeat 6px 5px;color: #808080;border: 1px solid #b3b3b3;border-radius: 0;text-indent: 10px;letter-spacing: 2px;cursor: pointer;}
+.wp-form-add-bank .cancel:hover{color: #fff;background: #b3b3b3 url(../../bg/icon-cancel-hover.png) no-repeat 6px 5px;transition-duration: .3s;}
+.wp-form-add-bank ul{margin: 0 auto;width: 440px;}
+.wp-form-add-bank ul li{height: 40px;margin-bottom: 10px;}
+.wp-form-add-bank ul li:last-child{margin-bottom: 0;}
+.wp-form-add-bank ul li label{color:#666;float: left;line-height: 40px;margin-right: 10px;font-size: 14px;text-align: right;width: 70px;}
+.wp-form-add-bank ul li input{border:1px solid #dedede;float: left;height: 18px;padding: 10px;font: 14px/16px 'Helvetica','Microsoft YaHei';border-radius: 1px;}
+.wp-form-add-bank ul li input[type="text"]{width: 218px;}
+.wp-form-add-bank ul li input[readonly="true"]{background: #F0F0F0;}
+.wp-form-add-bank ul li input#account{font-weight: bold;font-family: 'Verdana';color: #333;}
+.wp-form-add-bank ul li select{height: 26px;margin: 7px 0;font-family: 'Microsoft YaHei';border-radius: 0;letter-spacing: 1px;}
+.wp-form-add-bank ul li #validcode{width: 118px;}
+.wp-form-add-bank ul li .validcode-img{float: left;height: 32px;margin-left: 10px;padding: 6px 9px 0 10px;background: #fff;border: 1px solid #b3b3b3;cursor: pointer;}
+
+.wp-form-add-bank ul li .bank-area{float: left;}
+.wp-form-add-bank ul li .bank-area select{float: left;margin-right: 14px;}
+.wp-form-add-bank ul li .btn-add-bank{width: 240px;height: 40px;line-height: 40px;padding: 0;font-size: 14px;color: #fff;background: #ff6600;border: none;border-radius: 0;letter-spacing: 1px;margin-left: 80px;}
+
+
+.wp-form-bind-bank{position: relative;padding: 15px;border: 1px solid #b3b3b3;}
+.wp-form-bind-bank .cancel{position: absolute;right: 15px;top: 15px;width: 78px;height: 28px;font: 12px/28px 'Microsoft YaHei';background: #fff url(../bg/icon-cancel.png) no-repeat 6px 5px;color: #808080;border: 1px solid #b3b3b3;border-radius: 0;text-indent: 10px;letter-spacing: 2px;cursor: pointer;}
+.wp-form-bind-bank .cancel:hover{color: #fff;background: #b3b3b3 url(../bg/icon-cancel-hover.png) no-repeat 6px 5px;transition-duration: .3s;}
+.wp-form-bind-bank ul{margin: 0 auto;width: 440px;}
+.wp-form-bind-bank ul li{height: 40px;margin-bottom: 10px;}
+.wp-form-bind-bank ul li:last-child{margin-bottom: 0;}
+.wp-form-bind-bank ul li label{float: left;line-height: 40px;margin-right: 10px;font-size: 14px;text-align: right;width: 70px;}
+.wp-form-bind-bank ul li input{float: left;height: 18px;padding: 10px;font: 14px/16px 'Helvetica','Microsoft YaHei';border-radius: 1px;}
+.wp-form-bind-bank ul li input[type="text"]{width: 218px;}
+.wp-form-bind-bank ul li input[readonly="true"]{background: #F0F0F0;}
+.wp-form-bind-bank ul li input#account{font-weight: bold;font-family: 'Verdana';color: #333;}
+.wp-form-bind-bank ul li select{height: 26px;margin: 7px 0;font-family: 'Microsoft YaHei';border-radius: 0;letter-spacing: 1px;}
+.wp-form-bind-bank ul li #validcode{width: 118px;}
+.wp-form-bind-bank ul li .validcode-img{float: left;height: 32px;margin-left: 10px;padding: 6px 9px 0 10px;background: #fff;border: 1px solid #b3b3b3;cursor: pointer;}
+.wp-form-bind-bank ul li .bank-area{float: left;}
+.wp-form-bind-bank ul li .bank-area select{float: left;margin-right: 14px;}
+.wp-form-bind-bank ul li .btn-add-bank{width: 240px;height: 40px;line-height: 40px;padding: 0;font-size: 14px;color: #fff;background: #ff6600;border: none;border-radius: 0;letter-spacing: 1px;margin-left: 80px;}
+
+/* 鍏呭€� account/newrecharge.html:begin */
+.wp-form-recharge{position: relative;margin-top: 35px;padding: 15px 0;overflow: hidden;}
+.wp-form-recharge .btn-record{display: block;position: absolute;top: 20px;right: 0;width: 98px;height: 28px;font: 12px/28px 'Microsoft YaHei';color: #808080;text-indent: 30px;border: 1px solid #B3B3B3;letter-spacing: 2px;background: url(../bg/icon-record.png) no-repeat 7px 6px;;}
+.wp-form-recharge .btn-record:hover{color: #fff;background: #b3b3b3 url(../bg/icon-record-hover.png) no-repeat 7px 6px;transition-duration: .3s;}
+.wp-form-recharge li{margin-bottom: 20px;border-bottom: 1px dotted #B3B3B3;padding-bottom: 10px;}
+.wp-form-recharge li:last-child{border: none;margin: 0;padding: 0;}
+.wp-form-recharge li label{float: left;width: 120px;height: 40px;line-height: 40px;margin-right: 10px;font-size: 14px;}
+.wp-form-recharge li .bank_txt{ display: block; float: left; font: bold 14px/40px 'Verdana','Microsoft YaHei'; color: #333;}
+.list-offline-bank input{float: left;width: 218px;height: 18px;padding: 10px;font: bold 14px/18px 'Verdana';color: #333;border: 1px solid #b3b3b3;border-radius: 0;}
+.list-offline-bank img{ float: left; margin: 4px 0px 0px 12px;}
+.wp-form-recharge input[type="radio"]{display: none;}
+
+
+.recharge-type span{display: block;float: left;width: 120px;height: 40px;line-height: 40px;margin-right: 10px;font-size: 16px;text-align: center;cursor: pointer;letter-spacing: 1px; font-weight:bold;background:#909090;color:#fff;}
+.recharge-type span.current{background:#ff6600;}
+
+.recharge-amount input{float: left;width: 218px;height: 18px;padding: 10px;font: bold 14px/18px 'Verdana';color: #333;border: 1px solid #b3b3b3;border-radius: 0;}
+.recharge-amount .money-tip{display: block;float: left;font: bold 14px/40px 'Verdana','Microsoft YaHei';color: #333;margin-left: 20px;}
+.recharge-amount .money-tip b{margin-left: 4px;vertical-align: -1px;font-size: 18px;font-family: Helvetica;color: #c3272b;}
+
+.list-online-bank dl{float: left;width: 650px;overflow: hidden;}
+.list-online-bank dl dd {position: relative;float: left;margin: 0px 30px 20px 0;padding: 5px;border: 1px solid #b3b3b3;cursor: pointer;}
+.list-online-bank dl dd .icon-bank-selectd{position: absolute;right: 0;bottom: 0;width: 15px;height: 15px;background: url(../bg/icon-bank-selected.png) no-repeat;}
+.list-online-bank dl dd .bg-bank{width: 117px;height: 27px;}
+.list-third-party dl{float: left;width: 480px;overflow: hidden;}
+.list-third-party dl dd{position: relative;float: left;width: 125px;height: 28px;line-height: 28px;margin: 0px 15px 20px 0;padding: 5px;font-size: 14px;text-align: center;border: 1px solid #b3b3b3;cursor: pointer;letter-spacing: 1px;}
+.list-third-party dl dd .icon-bank-selectd{position: absolute;right: 0;bottom: 0;width: 15px;height: 15px;background: url(../bg/icon-bank-selected.png) no-repeat;}
+.list-third-party dl dd .bg-third-party{width: 117px;height: 27px;}
+
+.list-online-bank dl dd:hover, .list-third-party dl dd:hover{border-color: #00abed;}
+.list-online-bank dl dd.selected, .list-third-party dl dd.selected{border-color: #00abed;background: url(../bg/bg-bank-selected.png) no-repeat right bottom;}
+
+.wp-form-recharge li input.validcode{float: left;width: 108px;height: 18px;padding: 10px;font: 14px/18px 'Helvetica';color: #333;border: 1px solid #b3b3b3;border-radius: 0;letter-spacing: 1px;}
+.wp-form-recharge li .validcode-img{float: left;height: 32px;margin-left: 10px;padding: 6px 8px 0 8px;background: #fff;border: 1px solid #b3b3b3;cursor: pointer;}
+.wp-form-recharge li .btn-confirm-recharge{display: block;width: 230px;height: 40px;line-height: 40px;margin-left: 130px;font-size: 15px;color: #fff;text-align: center;background: #ff6600;letter-spacing: 2px;}
+
+.list-offline-bank dl{float: left;}
+.list-offline-bank dl dd{font: 14px/40px 'Helvetica','Microsoft YaHei'; width:100%; }
+.list-offline-bank dl dd .select-box{position: relative;top: 12px;display: inline-block;margin-right: 5px;border: 2px solid #b2b2b2;padding: 1px;background: #fff;cursor: pointer; width:8px; float:left;}
+.list-offline-bank dl dd .select-box div{width: 8px;height: 8px;}
+.list-offline-bank dl dd .select-box.selected{border: 2px solid #00abed;}
+.list-offline-bank dl dd .select-box.selected div{background: #00abed;}
+
+.list-offline-bank dl dd b{font-weight: normal;color: #808080;margin-right: 20px;display: inline-block;}
+.list-offline-bank dl dd b:first-of-type{width: 150px;letter-spacing: 1px;}
+.list-offline-bank dl dd b:nth-of-type(2){width: 199px;}
+.list-offline-bank .remark{float: left;width: 718px;height: 18px;padding: 10px;font: bold 14px/18px 'Verdana';border: 1px solid #b3b3b3;border-radius: 0;}
+.backbox{
+	width: 117px;
+	height: 27px;
+}

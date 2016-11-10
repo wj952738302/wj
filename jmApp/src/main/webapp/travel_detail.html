@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+		<title>电影众筹项目_电影投资项目列表 - 91玖马网</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap-3.3.5-dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="bootstrap-3.3.5-dist/css/buttons.css">
+	<link rel="stylesheet" href="circle_progress/css/progress.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="datepicker/css/bootstrap-datepicker3.css">
+	<script src="bootstrap-3.3.5-dist/js/jquery.min.js"></script>
+    <script src="bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+    <script src="datepicker/js/bootstrap-datepicker.js"></script>
+    <script src="datepicker/locales/bootstrap-datepicker.zh-CN.min.js"></script>
+    <script>
+    	$('.datepicker').datepicker({
+                language: 'zh-CN',
+                autoclose: true,
+                todayHighlight: true
+        });
+    </script>
+
+</head>
+<body>
+     <nav class="navbar navbar-default navbar-fixed-top" style="background:#FFF; color:#FFF">
+    	<div class="container">
+    		<div class="navbar-header" style="margin-top: 10px;margin-bottom: 10px">
+               <a class="navbar-brand" href="#" style="padding-top: 0">
+                   <img  src="img/91_logo.png">
+               </a>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example-navbar-collapse">
+                   <span class="sr-only">切换导航</span>
+                   <span class="icon-bar"></span>
+                   <span class="icon-bar"></span>
+                   <span class="icon-bar"></span>
+                </button>
+            </div>
+            
+            <div class="collapse navbar-collapse" id="example-navbar-collapse text-center" style="margin-top: 10px">
+	           <ul class="nav navbar-nav navbar-left ">
+                <li><a href="index.html" style="font-size: 18px">首页</a></li>
+                <li><a href="invest.html" style="font-size: 18px">影视投资</a></li>
+                <li><a href="projectdelivery.html" style="font-size: 18px">项目投递</a></li>
+                <!-- <li><a href="projectissue.html" style="font-size: 18px">发行</a></li> -->
+                <li><a href="shangcheng.html" style="font-size: 18px">玖马商城</a></li>
+                <li><a href="travel.html" style="font-size: 18px">影视旅游</a></li>
+                <li><a href="list.html" style="font-size: 18px">关于</a></li>
+              </ul>
+	            <ul class="nav navbar-nav navbar-right " >
+	            	<li>
+	            	  	 <div class="btn-group" role="group" aria-label="..." style="margin-top: 10px;margin-right: 20px">
+                           <a href="login.html" class="btn btn-warning" role="button">登陆</a>
+                         </div>
+	            	</li>
+
+	            	<li>
+	            	     <div class="btn-group" role="group" aria-label="..." style="margin-top: 10px">
+                            <a href="register.html" class="btn btn-default" role="button">注册</a>
+                         </div>
+	            	</li>
+	            </ul>
+	        </div> 
+    </nav>
+    <div style="background: #f5f5f5">
+         <div  style="background: #f5f5f5;overflow: hidden;">
+            <div class="container" style="background: #fff;width: 80%;margin-top: 100px;margin-bottom: 20px">
+                <h4><b>北京/天津/沈阳/青岛直飞新加坡6天</b></h4>
+                <div class="media" style ="border:solid 1px #e9e9e9;margin-bottom: 30px">
+                    <div class="media-left">
+                       <img class="media-object" src="img/tr4.jpg" style="height: 250px;">
+                    </div>
+                    <div class="media-right">
+                    	<div style="background: #fff2e8;width: 500px;margin-left: 50px;margin-top: 5px;overflow: hidden;">
+                    		<p style="margin: 20px 0px 10px 30px"><span class="text-muted">门市价：</span><s style="margin-left: 10px;">6380元</s></p>
+                    		<p style="margin: 0px 0px 10px 30px"><span class="text-muted">玖马价：</span><span style="font-size: 25px;margin-left: 10px;"><b><font color="red">5380</font></b></span>元起</p>
+                    	</div>
+                    	<div style="margin-left: 65px;margin-top: 10px;">
+                    		<p><span class="text-muted">出发城市：<span style="margin-left: 10px;">长春</p>
+                    		<p><span class="text-muted">发团时间：<span style="margin-left: 10px;">天天发团,请至少提前<font size="5px" color="red">5</font>天报名</p>
+                    	</div>
+                    	<div style="background: #f5f5f5;width: 500px;margin-left: 50px;overflow: hidden;border:solid 1px #e9e9e9;margin-bottom: 10px;">
+                    	    <form class="form-horizontal">
+                    	       <div class="form-group" style="margin-top: 10px;">
+                                  <label for="travle_time" class="col-sm-3 control-label">出发时间：</label>
+                                  <div class="col-sm-7">
+                                     <input type="text" class="form-control" id="travle_time" placeholder="请选择出发时间">
+                                  </div>
+                                </div>
+                                <div class="form-group" style="margin-top: 10px;">
+                                  <label for="travle_time" class="col-sm-3 control-label">预定人数：</label>
+                                  <div class="col-sm-9">
+                                     <div class="row">
+                                     	<div class="col-md-3">
+                                     	   <input type="text" class="form-control" id="travle_time">
+                                     	</div>
+                                     	<div class="col-md-2" >
+                                     		<p style="margin-top: 5px;">成人</p>
+                                     	</div>
+                                     	<div class="col-md-3">
+                                     	   <input type="text" class="form-control" id="travle_time">
+                                     	</div>
+                                     	<div class="col-md-3" >
+                                     		<p style="margin-top: 5px;">儿童</p>
+                                     	</div>
+                                     </div>
+                                  </div>
+                                </div>
+                                <button type="submit" class="btn btn-warning " style="margin-left: 130px;margin-bottom: 20px;">立即预定</button>
+                    	    </form>
+                    	</div>
+                    </div>
+                </div>
+            </div>
+            <div class="container" style="background: #fff;width: 80%;margin-top: 20px;margin-bottom: 20px">
+              <ul class="nav nav-pills" role="tablist" style="margin-top: 10px;margin-left: 10px">
+                 <li role="presentation" class="active"><a href="#introduce" aria-controls="introduce" role="tab" data-toggle="tab" style="font-size: 17px">行程介绍</a></li>
+                 <li role="presentation" ><a href="#cost" aria-controls="cost" role="tab" data-toggle="tab" style="font-size: 17px"  >费用说明</a></li>
+                 <li role="presentation"><a href="#pre-order" aria-controls="pre-order" role="tab" data-toggle="tab" style="font-size: 17px">预约须知</a></li>
+              </ul>
+               <div class="tab-content">
+                  <div role="tabpanel" class="tab-pane active" id="introduce" style="margin: 20px;background-image: url(img/introduce_img.png);height: 2500px;">
+                      
+                  </div>
+                  <div role="tabpanel" class="tab-pane" id="cost" style="margin: 20px;background-image: url(img/cost_img.png);height: 500px;">
+                      
+                  </div>
+                  <div role="tabpanel" class="tab-pane" id="pre-order" style="margin: 20px;background-image: url(img/pre-order.png);height: 3500px;">
+                     
+                  </div>
+               </div>
+            </div>
+         </div>
+    </div>	
+</body>
+  <script>
+    var nowTemp = new Date();
+    var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
+     
+    var checkin = $('#travle_time').datepicker({
+      onRender: function(date) {
+        return date.valueOf() < now.valueOf() ? 'disabled' : '';
+      }
+    }).on('changeDate', function(ev) {
+      if (ev.date.valueOf() > checkout.date.valueOf()) {
+        var newDate = new Date(ev.date)
+        newDate.setDate(newDate.getDate() + 1);
+        checkout.setValue(newDate);
+      }
+      checkin.hide();
+      $('#end')[0].focus();
+    }).data('datepicker');
+    var checkout = $('#end').datepicker({
+      onRender: function(date) {
+        return date.valueOf() <= checkin.date.valueOf() ? 'disabled' : '';
+      }
+    }).on('changeDate', function(ev) {
+      checkout.hide();
+    }).data('datepicker');
+</script>
+</html>

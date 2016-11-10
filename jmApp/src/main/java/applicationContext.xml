@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd" xmlns:tx="http://www.springframework.org/schema/tx">
+
+	<bean id="dataSource"
+		class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
+		<property name="url" value="jdbc:mysql://localhost:3306/jm"></property>
+		<property name="username" value="root"></property>
+		<property name="password" value="swp123"></property>
+	</bean>
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.MySQLDialect
+				</prop>
+				<prop key="hibernate.show_sql">true</prop>  
+                <prop key="hibernate.format_sql">true</prop>  
+			</props>
+		</property>
+		<property name="annotatedClasses">
+			<list>
+				<value>com.jm.app.bean.Project</value>
+				<value>com.jm.app.bean.User</value>
+				<value>com.jm.app.bean.ProjectSupport</value>
+				<value>com.jm.app.bean.Prorder</value>
+				<value>com.jm.app.bean.Deliver</value>
+				<value>com.jm.app.bean.Sms</value></list>
+		</property></bean>
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<tx:annotation-driven transaction-manager="transactionManager" />
+	<bean id="UserDAO" class="com.jm.app.dao.UserDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="ProjectSupportDAO"
+		class="com.jm.app.dao.ProjectSupportDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="ProrderDAO" class="com.jm.app.dao.ProrderDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="DeliverDAO" class="com.jm.app.dao.DeliverDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="ProjectDAO" class="com.jm.app.dao.ProjectDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="SmsDAO" class="com.jm.app.dao.SmsDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="UserAction" class="com.jm.app.action.UserAction">
+	    <property name="userService">
+	        <ref bean="UserService"/>
+	    </property>
+	</bean>
+	<bean id="MainAction" class="com.jm.app.action.MainAction" scope="prototype">
+	   <property name="mainService">
+	       <ref bean="MainService"/>
+	   </property>
+	</bean>
+	<bean id="ProjectAction" class="com.jm.app.action.ProjectAction" scope="prototype">
+	   <property name="proService">
+	       <ref bean="ProjectService"/>
+	   </property>
+	</bean>
+	<bean id="DetailAction" class="com.jm.app.action.DetailAction" scope="prototype">
+	   <property name="detailService">
+	      <ref bean="DetailService"/>
+	   </property>
+	</bean>
+	<bean id="RegisterAction" class="com.jm.app.action.RegisterAction" scope="prototype">
+	   <property name="registerService">
+	      <ref bean="RegisterService"/>
+	   </property>
+	   <property name="smservice">
+	      <ref bean="SmService"/>
+	   </property>
+	</bean>
+	<bean id="LoginAction" class="com.jm.app.action.LoginAction"  scope="prototype">
+	  <property name="loginService">
+	     <ref bean="LoginService"/>
+	  </property>
+	</bean>
+	<bean id="MainService" class="com.jm.app.service.MainServiceImpl">
+	    <property name="proDao">
+	       <ref bean="ProjectDAO"/>
+	    </property>
+	    <property name="orderDao">
+	       <ref bean="ProrderDAO"/>
+	    </property>
+	</bean>
+	<bean id="ProjectService" class="com.jm.app.service.ProjectServiceImpl">
+	   <property name="proDao">
+	       <ref bean="ProjectDAO"/>
+	    </property>
+	</bean>
+	<bean id="DetailService" class="com.jm.app.service.DetailServiceImpl">
+	    <property name="proDao">
+	       <ref bean="ProjectDAO"/>
+	    </property>
+	    <property name="orderDao">
+	       <ref bean="ProrderDAO"/>
+	    </property>
+	</bean>
+	<bean id="RegisterService" class="com.jm.app.service.RegisterServiceImpl" scope="prototype">
+	   <property name="userDao">
+	      <ref bean="UserDAO"/>
+	   </property>
+	</bean>
+	
+	<bean id="LoginService" class="com.jm.app.service.LoginServiceImpl">
+	   <property name="userDao">
+	      <ref bean="UserDAO"/>
+	   </property>
+	</bean>
+	
+	<bean id="UserService" class="com.jm.app.service.UserServiceImpl">
+	   <property name="userDao">
+	      <ref bean="UserDAO"/>
+	   </property>
+	</bean>
+	<bean id="SmService" class="com.jm.app.service.SmServiceImpl">
+	   <property name="contentTemp" value="尊敬的客户你好，你的验证码是@【玖马娱乐】"/>
+	   <property name="url" value="http://dx.ipyy.net/sms.aspx"/>
+	   <property name="account" value="AA00470"/>
+	   <property name="password" value="AA0047066"/>
+	   <property name="smsDao">
+	       <ref bean="SmsDAO"/>
+	   </property>
+	</bean>
+	</beans>

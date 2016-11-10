@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="struts.objectFactory" value="spring" />
+
+	<package name="jm" namespace="/jm" extends="struts-default,json-default">
+		<action name="MainAction" class="MainAction">
+			<result>/index.jsp</result>
+		</action>
+		<action name="ProjectAction"
+			class="ProjectAction">
+			<result>/project.jsp?type=${type}&amp;status=${status}</result>
+		</action>
+		<action name="DetailAction"
+			class="DetailAction">
+			<result>/detail.jsp</result>
+		</action>
+		<action name="Register"
+			class="RegisterAction" method="register">
+			<result name="reg_success" >/login.jsp</result>
+			<result name="reg_failture">/register.jsp</result>
+		</action>
+		<action name="TelValidate" class="RegisterAction" method="validateTel">
+            <result type="json">  
+                <!-- 这里指定将被Struts2序列化的属性，该属性在action中必须有对应的getter方法 -->  
+                <param name="root">dataMap</param>  
+            </result>  
+		</action>
+		<action name="CodeCreate" class="RegisterAction" method="createCode">  
+              <result type="json">  
+                 <param name="excludeNullProperties">true</param>  
+              </result>   
+        </action>  
+        <action name="LoginAction" class="LoginAction">
+            <result name="login_success" type="redirectAction">MainAction</result>
+			<result name="login_failture">/login.jsp</result>
+        </action>
+        <action name="UserAction" class="UserAction">
+            <result name="error" type="redirectAction">MainAction</result>
+            <result name="success">/user.jsp</result>
+        </action>
+        <action name="FileUpload" class="UserAction" method="uploadImage">
+            <result type="json">  
+                <!-- 这里指定将被Struts2序列化的属性，该属性在action中必须有对应的getter方法 -->  
+                <param name="root">uploadMap</param>  
+            </result>  
+        </action>
+        <action name="SaveInfo" class="UserAction" method="saveInfo">
+            <result type="json">  
+                 <param name="excludeNullProperties">true</param>  
+              </result>
+        </action>
+        <action name="SaveAddess" class="UserAction" method="saveAddress">
+            <result type="json">
+               <param name="excludeNullProperties">true</param>  
+            </result>
+        </action>
+    </package>
+</struts>    
