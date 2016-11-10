@@ -42,7 +42,7 @@ public class LoginAction extends ActionSupport implements SessionAware{
 	private String password1;//登陆密码
 	private int log_res;//登陆
 	private User user=new User();
-	private Integer auto_load;//自动登陆参数
+	private Integer auto_load;//自动登陆参数 
 	private Map session;
 	
 	
